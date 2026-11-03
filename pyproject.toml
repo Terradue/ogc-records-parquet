@@ -46,6 +46,11 @@ notebook = [
   "pygeofilter-duckdb==0.2.0",
   "ipykernel>=6,<8"
 ]
+cli = [
+  "click>=8.5.0",
+  "loguru==0.7.3",
+  "session-adapters==0.7.0"
+]
 
 # ---------------------------------------------------------------------------
 # Hatch: development and quality environment
@@ -58,7 +63,8 @@ dev = [
   "mypy>=2.3,<3",
   "bandit>=1.9,<2",
   "pyarrow-stubs>=20.0.0.20260819",
-  "types-shapely>=2.1.0.20260728"
+  "types-shapely>=2.1.0.20260728",
+  "types-requests>=2.32,<3"
 ]
 test = [
   "pytest>=8.4,<10",
@@ -75,6 +81,9 @@ Documentation = "https://Terradue.github.io/ogc-records-parquet/"
 Repository = "https://github.com/Terradue/ogc-records-parquet"
 Issues = "https://github.com/Terradue/ogc-records-parquet/issues"
 Changelog = "https://github.com/Terradue/ogc-records-parquet/blob/main/CHANGELOG.md"
+
+[project.scripts]
+ogc-records-parquet = "ogc_records_parquet.cli:main"
 
 # ---------------------------------------------------------------------------
 # Versioning and packaging
@@ -133,7 +142,11 @@ exclude_lines = [
 # Hatch: test environment
 # ---------------------------------------------------------------------------
 
+[tool.hatch.envs.cli]
+features = ["cli"]
+
 [tool.hatch.envs.test]
+features = ["cli"]
 skip-install = false
 dependencies = [
   "pytest>=9.1.1,<10",
@@ -258,7 +271,7 @@ files = [
 
 [tool.hatch.envs.dev]
 python = "3.11"
-features = ["dev"]
+features = ["dev", "cli"]
 
 [tool.hatch.envs.docs]
 skip-install = true
