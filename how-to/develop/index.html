@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://Terradue.github.io/ogc-records-parquet/how-to/develop/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Develop and build documentation - OG API Records - Parquet</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Develop and build documentation";
+        var mkdocs_page_input_path = "how-to/develop.md";
+        var mkdocs_page_url = "/ogc-records-parquet/how-to/develop/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OG API Records - Parquet
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorials/first-round-trip/">Your first round trip</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">How-to guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../import-export/">Import and export records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../project-filter/">Project and filter records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../collections/">Store collection membership</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../migrate/">Migrate existing applications and files</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Develop and build documentation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#run-the-quality-gates">Run the quality gates</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#preview-the-documentation">Preview the documentation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#build-and-validate">Build and validate</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#choose-the-right-section">Choose the right section</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/api/">Python API</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/cli/">Command-line interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/storage-format/">Storage format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/limitations/">Errors and limitations</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Explanation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../explanation/preservation/">Preservation and projections</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../explanation/ogc-and-stac/">OGC Records and STAC</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OG API Records - Parquet</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">How-to guides</li>
+      <li class="breadcrumb-item active">Develop and build documentation</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Terradue/ogc-records-parquet/edit/master/docs/how-to/develop.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="develop-and-build-documentation">Develop and build documentation<a class="headerlink" href="#develop-and-build-documentation" title="Permanent link">&para;</a></h1>
+<p>Run these commands from the repository root with Hatch installed.</p>
+<h2 id="run-the-quality-gates">Run the quality gates<a class="headerlink" href="#run-the-quality-gates" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash">hatch run dev:format-check
+hatch run dev:lint-check
+hatch run dev:typecheck
+hatch run dev:security
+hatch run test:test
+</code></pre>
+<p><code>hatch run dev:quality</code> groups the four static checks.
+<code>hatch run dev:check</code> also runs tests in the development environment;
+<code>hatch run test:test</code> runs the configured Python matrix.</p>
+<p>For packaging:</p>
+<pre><code class="language-bash">hatch build
+</code></pre>
+<p>The source distribution includes the documentation and MkDocs configuration.
+The wheel contains the library and license notices.</p>
+<h2 id="preview-the-documentation">Preview the documentation<a class="headerlink" href="#preview-the-documentation" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash">hatch run docs:serve
+</code></pre>
+<p>Open the local URL printed by MkDocs, normally <code>http://127.0.0.1:8000/</code>.
+The dedicated Hatch environment installs MkDocs and the mkdocstrings Python
+handler without installing the library. The handler reads signatures and
+Google-style docstrings directly from <code>src/</code>.</p>
+<h2 id="build-and-validate">Build and validate<a class="headerlink" href="#build-and-validate" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash">hatch run docs:build
+</code></pre>
+<p>The build writes to <code>site/</code>, which is ignored by Git. Strict mode makes
+warnings fail the build, including configured checks for missing local links
+and anchors. It does not check the availability of external websites or execute
+Python examples.</p>
+<p>To use another output directory:</p>
+<pre><code class="language-bash">hatch run docs:build --site-dir /tmp/ogc-records-docs
+</code></pre>
+<p>The build creates static files. Hosting and deployment are separate steps.</p>
+<h2 id="choose-the-right-section">Choose the right section<a class="headerlink" href="#choose-the-right-section" title="Permanent link">&para;</a></h2>
+<p>Follow <a href="https://diataxis.fr/">Diátaxis</a> when adding content:</p>
+<ul>
+<li><strong>Tutorials:</strong> guided learning with a small, reproducible result and observable
+  checkpoints.</li>
+<li><strong>How-to guides:</strong> steps to accomplish a specific task for an existing user.</li>
+<li><strong>Reference:</strong> signatures, defaults, types, format rules, and failure conditions.</li>
+<li><strong>Explanation:</strong> rationale, trade-offs, and relationships between concepts.</li>
+</ul>
+<p>Add each page to <code>mkdocs.yaml</code>, use relative links between documentation pages,
+and check examples against the public API. Keep the README as an entry point;
+put detailed contracts in reference pages. Changes to public signatures or
+storage behavior must update the source docstrings and relevant storage
+reference pages. The Python API page renders the public exports automatically.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../migrate/" class="btn btn-neutral float-left" title="Migrate existing applications and files"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../reference/api/" class="btn btn-neutral float-right" title="Python API">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Terradue/ogc-records-parquet" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../migrate/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../reference/api/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

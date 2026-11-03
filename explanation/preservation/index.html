@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://Terradue.github.io/ogc-records-parquet/explanation/preservation/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Preservation and projections - OG API Records - Parquet</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Preservation and projections";
+        var mkdocs_page_input_path = "explanation/preservation.md";
+        var mkdocs_page_url = "/ogc-records-parquet/explanation/preservation/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OG API Records - Parquet
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorials/first-round-trip/">Your first round trip</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">How-to guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/import-export/">Import and export records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/project-filter/">Project and filter records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/collections/">Store collection membership</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/migrate/">Migrate existing applications and files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/develop/">Develop and build documentation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/api/">Python API</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/cli/">Command-line interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/storage-format/">Storage format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/limitations/">Errors and limitations</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Explanation</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Preservation and projections</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#the-document-is-authoritative">The document is authoritative</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#preservation-starts-at-the-pystac-boundary">Preservation starts at the PySTAC boundary</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#query-geometry-and-document-geometry-have-different-roles">Query geometry and document geometry have different roles</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#predictability-has-a-storage-cost">Predictability has a storage cost</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ogc-and-stac/">OGC Records and STAC</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OG API Records - Parquet</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Explanation</li>
+      <li class="breadcrumb-item active">Preservation and projections</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Terradue/ogc-records-parquet/edit/master/docs/explanation/preservation.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="preservation-and-projections">Preservation and projections<a class="headerlink" href="#preservation-and-projections" title="Permanent link">&para;</a></h1>
+<p>A record can contain deeply nested, heterogeneous metadata that does not fit a
+single useful query schema. The library therefore stores two representations:
+the serialized record and a selected set of typed Arrow columns.</p>
+<h2 id="the-document-is-authoritative">The document is authoritative<a class="headerlink" href="#the-document-is-authoritative" title="Permanent link">&para;</a></h2>
+<p><code>__record_json</code> stores <code>OGCRecord.to_dict(transform_hrefs=False)</code>.
+Readers reconstruct records from this payload through <code>OGCRecord.from_dict()</code>.
+They do not reconstruct documents from query columns.</p>
+<p>This separation permits a field to appear only in later records or have
+different shapes across records without requiring it to be an Arrow column.
+An explicit projection can select the fields your service needs.</p>
+<p>Changing a query column does not edit the record. To change the document,
+recover the <code>OGCRecord</code>, use its APIs, and serialize it again.</p>
+<h2 id="preservation-starts-at-the-pystac-boundary">Preservation starts at the PySTAC boundary<a class="headerlink" href="#preservation-starts-at-the-pystac-boundary" title="Permanent link">&para;</a></h2>
+<p>The package preserves the extension's serialized values, not raw source bytes.
+PySTAC handles record construction, links, assets, and timestamp normalization.
+For example, timestamps are normalized to UTC whole seconds, and absent links
+may become an empty list.</p>
+<p>The storage layer validates that the resulting document contains finite JSON
+values and string keys. It rejects tuples and non-string keys instead of allowing
+the JSON encoder to silently coerce them. Decoding rejects duplicate keys.
+Validation checks existing containers without making a second deep copy.</p>
+<p>Relative hrefs are serialized without transformation. Source self links, when
+present, are included. An independent recovered record can be edited without
+changing the file or another recovered record.</p>
+<h2 id="query-geometry-and-document-geometry-have-different-roles">Query geometry and document geometry have different roles<a class="headerlink" href="#query-geometry-and-document-geometry-have-different-roles" title="Permanent link">&para;</a></h2>
+<p>The binary geometry column supports spatial tools. Its bbox is derived from
+geometry and provides a two-dimensional covering.
+The original serialized geometry and bbox remain in the payload, including
+foreign geometry members and a possible six-coordinate bbox.</p>
+<p>Null and empty geometries have a null covering. An empty geometry still has a
+WKB representation; a null geometry does not.</p>
+<h2 id="predictability-has-a-storage-cost">Predictability has a storage cost<a class="headerlink" href="#predictability-has-a-storage-cost" title="Permanent link">&para;</a></h2>
+<p>Each batch uses the same projection schema. Conversion consumes input once,
+in order, and does not perform full-file schema inference or disk-backed schema
+unification. This makes projection choices explicit.</p>
+<p>The payload adds storage alongside the columns. Batching limits the number of
+records processed together, but is not a fixed memory bound: document size and
+Arrow allocations also matter. No throughput or compression benchmark is
+promised by the API.</p>
+<p>See <a href="../../how-to/project-filter/">projection how-to</a> and
+<a href="../../reference/storage-format/">storage reference</a>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../reference/limitations/" class="btn btn-neutral float-left" title="Errors and limitations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ogc-and-stac/" class="btn btn-neutral float-right" title="OGC Records and STAC">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Terradue/ogc-records-parquet" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../reference/limitations/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ogc-and-stac/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

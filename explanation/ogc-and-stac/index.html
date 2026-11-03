@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://Terradue.github.io/ogc-records-parquet/explanation/ogc-and-stac/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>OGC Records and STAC - OG API Records - Parquet</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "OGC Records and STAC";
+        var mkdocs_page_input_path = "explanation/ogc-and-stac.md";
+        var mkdocs_page_url = "/ogc-records-parquet/explanation/ogc-and-stac/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OG API Records - Parquet
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorials/first-round-trip/">Your first round trip</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">How-to guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/import-export/">Import and export records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/project-filter/">Project and filter records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/collections/">Store collection membership</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/migrate/">Migrate existing applications and files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/develop/">Develop and build documentation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/api/">Python API</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/cli/">Command-line interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/storage-format/">Storage format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/limitations/">Errors and limitations</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Explanation</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../preservation/">Preservation and projections</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">OGC Records and STAC</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#object-compatibility-does-not-imply-document-equivalence">Object compatibility does not imply document equivalence</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#relationship-to-stac-geoparquet">Relationship to stac-geoparquet</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#membership-is-an-external-association">Membership is an external association</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#validation-responsibilities">Validation responsibilities</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OG API Records - Parquet</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Explanation</li>
+      <li class="breadcrumb-item active">OGC Records and STAC</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Terradue/ogc-records-parquet/edit/master/docs/explanation/ogc-and-stac.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ogc-records-and-stac">OGC Records and STAC<a class="headerlink" href="#ogc-records-and-stac" title="Permanent link">&para;</a></h1>
+<p><code>OGCRecord</code> is supplied by
+<a href="https://terradue.github.io/pystac-ext-ogc-record/">pystac-ext-ogc-record</a>.
+It provides PySTAC-compatible links, assets, and metadata APIs while retaining
+OGC Record serialization.</p>
+<h2 id="object-compatibility-does-not-imply-document-equivalence">Object compatibility does not imply document equivalence<a class="headerlink" href="#object-compatibility-does-not-imply-document-equivalence" title="Permanent link">&para;</a></h2>
+<p>An OGC Record may describe a service without geometry or a STAC temporal extent.
+OGC <code>time</code> and STAC datetime fields are separate concepts. Storing an OGC
+Record must not invent an observation time or move OGC fields to fit a STAC
+document.</p>
+<p>The extension's explicit <code>to_stac_item()</code> conversion requires a STAC temporal
+extent. This library does not call that method during storage.</p>
+<h2 id="relationship-to-stac-geoparquet">Relationship to stac-geoparquet<a class="headerlink" href="#relationship-to-stac-geoparquet" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/stac-utils/stac-geoparquet">stac-geoparquet</a> provides
+STAC-oriented conversion and shares the underlying Arrow, WKB, and GeoParquet
+building blocks. It is credited in the repository's <code>NOTICE</code>.</p>
+<p>This library's contract additionally keeps the full OGC payload and
+storage-only membership separate from the query columns. These are local
+format choices; an OGC Records Parquet file is not automatically a
+STAC-GeoParquet document.</p>
+<p>The implementation depends directly on PySTAC, PyArrow, Shapely, and PyProj.
+It does not import or patch <code>stac-geoparquet</code> internals.</p>
+<h2 id="membership-is-an-external-association">Membership is an external association<a class="headerlink" href="#membership-is-an-external-association" title="Permanent link">&para;</a></h2>
+<p>A catalog description explains a collection. It does not identify which rows
+belong to it. The nullable <code>__collection_id</code> column stores that association
+explicitly, independently of record IDs and of any <code>collection</code> member in
+the original document.</p>
+<p>This permits duplicate IDs across collections and unknown membership.
+It also means an old file containing only descriptions cannot reveal lost
+memberships without an external source.</p>
+<h2 id="validation-responsibilities">Validation responsibilities<a class="headerlink" href="#validation-responsibilities" title="Permanent link">&para;</a></h2>
+<p>The package checks storage types, JSON representability, projection safety,
+and format compatibility. OGC conformance and profile validation belong to
+the caller. <code>OGCRecord.validate()</code> needs an explicitly supplied OGC validator;
+the storage pipeline does not perform that validation automatically.</p>
+<p>See <a href="../../how-to/collections/">collection membership</a> for practical usage.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../preservation/" class="btn btn-neutral float-left" title="Preservation and projections"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Terradue/ogc-records-parquet" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../preservation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

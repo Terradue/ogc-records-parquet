@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://Terradue.github.io/ogc-records-parquet/reference/cli/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Command-line interface - OG API Records - Parquet</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Command-line interface";
+        var mkdocs_page_input_path = "reference/cli.md";
+        var mkdocs_page_url = "/ogc-records-parquet/reference/cli/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OG API Records - Parquet
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorials/first-round-trip/">Your first round trip</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">How-to guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/import-export/">Import and export records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/project-filter/">Project and filter records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/collections/">Store collection membership</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/migrate/">Migrate existing applications and files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/develop/">Develop and build documentation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../api/">Python API</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Command-line interface</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#import-records">Import records</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#options-and-authentication">Options and authentication</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exit-status">Exit status</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../storage-format/">Storage format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../limitations/">Errors and limitations</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Explanation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../explanation/preservation/">Preservation and projections</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../explanation/ogc-and-stac/">OGC Records and STAC</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OG API Records - Parquet</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Reference</li>
+      <li class="breadcrumb-item active">Command-line interface</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Terradue/ogc-records-parquet/edit/master/docs/reference/cli.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="command-line-interface">Command-line interface<a class="headerlink" href="#command-line-interface" title="Permanent link">&para;</a></h1>
+<p>Install the optional CLI dependencies:</p>
+<pre><code class="language-sh">pip install 'ogc-records-parquet[cli]'
+ogc-records-parquet --help
+</code></pre>
+<h2 id="import-records">Import records<a class="headerlink" href="#import-records" title="Permanent link">&para;</a></h2>
+<p>Pass one or more individual OGC Record JSON documents and a destination:</p>
+<pre><code class="language-sh">ogc-records-parquet \
+  examples/ogc-records/hazard-mapping/records/diachronic-flood-detection.json \
+  --output output/records.parquet
+</code></pre>
+<p>Inputs may mix local paths with HTTP, HTTPS, <code>file://</code>, and <code>oci://</code> URLs.
+Records retain their argument order. Each source must contain one record;
+arrays, FeatureCollections, and NDJSON are not supported. The CLI parses sources
+with PySTAC's <code>OGCRecord.from_dict()</code>, without adding a source self link.</p>
+<p>The command loads all records before writing, creates missing output directories,
+and overwrites an existing destination. It does not provide streaming ingestion,
+filtering, or JSON export. Use the <a href="../api/">Python API</a> for those workflows.</p>
+<h2 id="options-and-authentication">Options and authentication<a class="headerlink" href="#options-and-authentication" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Environment variable</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--output PATH</code></td>
+<td>—</td>
+<td>Required destination GeoParquet file.</td>
+</tr>
+<tr>
+<td><code>--oauth2-bearer TOKEN</code></td>
+<td><code>OAUTH2_BEARER</code></td>
+<td>Bearer token for HTTP and HTTPS requests.</td>
+</tr>
+<tr>
+<td><code>--oci-hostname HOST</code></td>
+<td><code>OCI_HOSTNAME</code></td>
+<td>Registry host for explicit credentials.</td>
+</tr>
+<tr>
+<td><code>--oci-username USER</code></td>
+<td><code>OCI_USERNAME</code></td>
+<td>Registry username.</td>
+</tr>
+<tr>
+<td><code>--oci-password PASSWORD</code></td>
+<td><code>OCI_PASSWORD</code></td>
+<td>Registry password.</td>
+</tr>
+<tr>
+<td><code>--authfile PATH</code></td>
+<td><code>REGISTRY_AUTH_FILE</code></td>
+<td>Registry credentials file.</td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>—</td>
+<td>Show usage and exit.</td>
+</tr>
+</tbody>
+</table>
+<p>Explicit options take precedence over their environment variables. All three OCI
+credential options must be supplied to add credentials for the specified host.
+A credentials file can also supply registry authentication. If it does not exist,
+the command starts with empty credentials before adding explicit credentials.</p>
+<p>The default credentials path is resolved when the command runs:</p>
+<ul>
+<li>Linux with a nonempty <code>XDG_RUNTIME_DIR</code>: <code>$XDG_RUNTIME_DIR/containers/auth.json</code>.</li>
+<li>Otherwise, including macOS and Windows: <code>~/.config/containers/auth.json</code>.</li>
+</ul>
+<p>For authenticated HTTP sources, set <code>OAUTH2_BEARER</code> in the invoking environment:</p>
+<pre><code class="language-sh">ogc-records-parquet https://catalog.example.org/records/workflow.json \
+  --output records.parquet
+</code></pre>
+<h2 id="exit-status">Exit status<a class="headerlink" href="#exit-status" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>0</code>: conversion succeeded, or help was displayed.</li>
+<li><code>1</code>: a source could not be read or parsed, or output could not be written.</li>
+<li><code>2</code>: invalid command usage, such as missing inputs or <code>--output</code>.</li>
+</ul>
+<p>Progress and diagnostic logs are written to standard error. A failed write may
+leave a partial output file; output replacement is not atomic.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../api/" class="btn btn-neutral float-left" title="Python API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../storage-format/" class="btn btn-neutral float-right" title="Storage format">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Terradue/ogc-records-parquet" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../api/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../storage-format/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

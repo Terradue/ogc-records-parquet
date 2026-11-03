@@ -1,0 +1,2178 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://Terradue.github.io/ogc-records-parquet/reference/api/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Python API - OG API Records - Parquet</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Python API";
+        var mkdocs_page_input_path = "reference/api.md";
+        var mkdocs_page_url = "/ogc-records-parquet/reference/api/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OG API Records - Parquet
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorials/first-round-trip/">Your first round trip</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">How-to guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/import-export/">Import and export records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/project-filter/">Project and filter records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/collections/">Store collection membership</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/migrate/">Migrate existing applications and files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/develop/">Develop and build documentation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Python API</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../cli/">Command-line interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../storage-format/">Storage format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../limitations/">Errors and limitations</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Explanation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../explanation/preservation/">Preservation and projections</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../explanation/ogc-and-stac/">OGC Records and STAC</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OG API Records - Parquet</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Reference</li>
+      <li class="breadcrumb-item active">Python API</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Terradue/ogc-records-parquet/edit/master/docs/reference/api.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="python-api">Python API<a class="headerlink" href="#python-api" title="Permanent link">&para;</a></h1>
+<p>Import the public API from <code>ogc_records_parquet</code>. The reference below is
+generated from its exported objects, signatures, and Google-style docstrings.</p>
+<p>For column types and metadata contracts, see the
+<a href="../storage-format/">storage format</a>. See <a href="../limitations/">errors and limitations</a>
+for failure timing and <a href="../../how-to/migrate/">migration</a> for API changes.</p>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+
+    <div class="doc doc-contents first">
+
+        <p>Store PySTAC OGCRecord objects alongside Arrow and GeoParquet query projections.</p>
+<p>Use <code>records_to_arrow()</code> and <code>to_parquet()</code> to write records, then
+<code>read_parquet()</code> to reconstruct them. <code>arrow_to_records()</code> reconstructs records
+from an in-memory table or stream. Readers use the preserved JSON payload,
+independently of query columns and storage-only collection membership.</p>
+<p>Record parsing and serialization belong to <code>pystac-ext-ogc-record</code>. This package
+checks storage compatibility and projection safety; OGC profile validation and
+query execution remain the caller's responsibility.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h1 id="ogc_records_parquet.records_to_arrow" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">records_to_arrow</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">collections</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">collection_ids</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#ogc_records_parquet.records_to_arrow" class="headerlink" title="Permanent link">&para;</a></h1>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Project Records into a lazy Arrow stream with PySTAC-serialized payloads.</p>
+<p>Record and membership iterables are consumed only when the reader is
+advanced. Records are serialized at that time, so changes made before
+consumption are visible. Collection descriptions are instead validated and
+serialized immediately. The input records and descriptions are not modified.</p>
+<p>Each row retains the document produced by
+<code>OGCRecord.to_dict(transform_hrefs=False)</code>, including self links and
+unmodified relative hrefs. PySTAC normalization applies before storage;
+original JSON bytes and pre-normalization timestamp precision are not
+preserved. Null geometry and records without STAC temporal fields are
+supported. Non-null geometry must already use CRS84 longitude/latitude.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>records</code></b>
+                  (<code><span title="collections.abc.Iterable">Iterable</span>[<span title="pystac.extensions.ogc_record.OGCRecord">OGCRecord</span>]</code>)
+              –
+              <div class="doc-md-description">
+                <p>One-pass iterable of OGCRecord objects in source order. Serialization
+and conversion happen during consumption; duplicate IDs are allowed.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>schema</code></b>
+                  (<code><span title="pyarrow.Schema">Schema</span> | None</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Query projection fields. Dot-separated names select nested object
+keys; this is not an OGC API validation schema. <code>None</code> selects
+<code>default_schema()</code>; an empty schema selects no query fields. Missing
+paths project as null, which is rejected for non-nullable fields.
+Paths cannot traverse lists or escape dots in keys. Reserved columns
+<code>geometry</code>, <code>bbox</code>, <code>__record_json</code>, and <code>__collection_id</code> are always
+added and cannot be named as projections. Unprojected members remain
+in the payload. Custom schema metadata is retained except for the
+library-owned <code>geo</code> and <code>ogc-records-parquet</code> keys.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>batch_size</code></b>
+                  (<code><span title="int">int</span></code>, default:
+                      <code>1024</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Maximum number of records converted per batch, greater than zero.
+This is a row count, not a bound on memory use.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>collections</code></b>
+                  (<code><span title="collections.abc.Mapping">Mapping</span>[<span title="str">str</span>, <span title="object">object</span>] | None</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Catalog JSON objects indexed by string collection IDs. Stored
+as a metadata snapshot before this function returns. <code>None</code> omits
+descriptions; an empty mapping stores an empty descriptions object.
+Catalog schemas, description IDs, and membership references are not
+semantically validated.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>collection_ids</code></b>
+                  (<code><span title="collections.abc.Iterable">Iterable</span>[<span title="str">str</span> | None] | None</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>One-pass memberships aligned with Records, including nulls
+for unknown membership. Omission stores null for every row. Values must
+be non-empty strings or null, and the iterable must have exactly as many
+values as records. Membership is independent of original JSON fields
+and is not inferred from the supplied descriptions.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="pyarrow.RecordBatchReader">RecordBatchReader</span></code>
+              –
+              <div class="doc-md-description">
+                <p>A single-pass reader with a fixed schema, even for empty input. Call</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="pyarrow.RecordBatchReader">RecordBatchReader</span></code>
+              –
+              <div class="doc-md-description">
+                <p><code>read_all()</code> to materialize a reusable table, or pass the reader directly</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="pyarrow.RecordBatchReader">RecordBatchReader</span></code>
+              –
+              <div class="doc-md-description">
+                <p>to <code>to_parquet()</code>. New streams use storage format <code>1.1.0</code>.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="ValueError">ValueError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>Immediately if the batch size, projection names, or collection
+JSON is invalid. During consumption if a record contains non-JSON or
+non-finite values, geometry cannot be encoded, a projection requires
+an unsafe cast or violates nullability, or memberships are invalid
+or differ in length. PySTAC may also reject malformed timestamps.</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="TypeError">TypeError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>During consumption if PySTAC cannot serialize a metadata
+timestamp of the supplied Python type.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <p>Create a stream and inspect a default query column:</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pystac.extensions.ogc_record</span><span class="w"> </span><span class="kn">import</span> <span class="n">OGCRecord</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ogc_records_parquet</span><span class="w"> </span><span class="kn">import</span> <span class="n">records_to_arrow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">record</span> <span class="o">=</span> <span class="n">OGCRecord</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"workflow"</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="p">{</span><span class="s2">"title"</span><span class="p">:</span> <span class="s2">"Flood mapping"</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">records_to_arrow</span><span class="p">([</span><span class="n">record</span><span class="p">],</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">read_all</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span><span class="p">[</span><span class="s2">"properties.title"</span><span class="p">]</span><span class="o">.</span><span class="n">to_pylist</span><span class="p">()</span>
+<span class="go">['Flood mapping']</span>
+</code></pre></div>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>src/ogc_records_parquet/arrow.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">records_to_arrow</span><span class="p">(</span>
+    <span class="n">records</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">OGCRecord</span><span class="p">],</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">schema</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Schema</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">,</span>
+    <span class="n">collections</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">collection_ids</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">RecordBatchReader</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Project Records into a lazy Arrow stream with PySTAC-serialized payloads.</span>
+
+<span class="sd">    Record and membership iterables are consumed only when the reader is</span>
+<span class="sd">    advanced. Records are serialized at that time, so changes made before</span>
+<span class="sd">    consumption are visible. Collection descriptions are instead validated and</span>
+<span class="sd">    serialized immediately. The input records and descriptions are not modified.</span>
+
+<span class="sd">    Each row retains the document produced by</span>
+<span class="sd">    `OGCRecord.to_dict(transform_hrefs=False)`, including self links and</span>
+<span class="sd">    unmodified relative hrefs. PySTAC normalization applies before storage;</span>
+<span class="sd">    original JSON bytes and pre-normalization timestamp precision are not</span>
+<span class="sd">    preserved. Null geometry and records without STAC temporal fields are</span>
+<span class="sd">    supported. Non-null geometry must already use CRS84 longitude/latitude.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        records: One-pass iterable of OGCRecord objects in source order. Serialization</span>
+<span class="sd">            and conversion happen during consumption; duplicate IDs are allowed.</span>
+<span class="sd">        schema: Query projection fields. Dot-separated names select nested object</span>
+<span class="sd">            keys; this is not an OGC API validation schema. `None` selects</span>
+<span class="sd">            `default_schema()`; an empty schema selects no query fields. Missing</span>
+<span class="sd">            paths project as null, which is rejected for non-nullable fields.</span>
+<span class="sd">            Paths cannot traverse lists or escape dots in keys. Reserved columns</span>
+<span class="sd">            `geometry`, `bbox`, `__record_json`, and `__collection_id` are always</span>
+<span class="sd">            added and cannot be named as projections. Unprojected members remain</span>
+<span class="sd">            in the payload. Custom schema metadata is retained except for the</span>
+<span class="sd">            library-owned `geo` and `ogc-records-parquet` keys.</span>
+<span class="sd">        batch_size: Maximum number of records converted per batch, greater than zero.</span>
+<span class="sd">            This is a row count, not a bound on memory use.</span>
+<span class="sd">        collections: Catalog JSON objects indexed by string collection IDs. Stored</span>
+<span class="sd">            as a metadata snapshot before this function returns. `None` omits</span>
+<span class="sd">            descriptions; an empty mapping stores an empty descriptions object.</span>
+<span class="sd">            Catalog schemas, description IDs, and membership references are not</span>
+<span class="sd">            semantically validated.</span>
+<span class="sd">        collection_ids: One-pass memberships aligned with Records, including nulls</span>
+<span class="sd">            for unknown membership. Omission stores null for every row. Values must</span>
+<span class="sd">            be non-empty strings or null, and the iterable must have exactly as many</span>
+<span class="sd">            values as records. Membership is independent of original JSON fields</span>
+<span class="sd">            and is not inferred from the supplied descriptions.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A single-pass reader with a fixed schema, even for empty input. Call</span>
+<span class="sd">        `read_all()` to materialize a reusable table, or pass the reader directly</span>
+<span class="sd">        to `to_parquet()`. New streams use storage format `1.1.0`.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Immediately if the batch size, projection names, or collection</span>
+<span class="sd">            JSON is invalid. During consumption if a record contains non-JSON or</span>
+<span class="sd">            non-finite values, geometry cannot be encoded, a projection requires</span>
+<span class="sd">            an unsafe cast or violates nullability, or memberships are invalid</span>
+<span class="sd">            or differ in length. PySTAC may also reject malformed timestamps.</span>
+<span class="sd">        TypeError: During consumption if PySTAC cannot serialize a metadata</span>
+<span class="sd">            timestamp of the supplied Python type.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        Create a stream and inspect a default query column:</span>
+
+<span class="sd">        &gt;&gt;&gt; from pystac.extensions.ogc_record import OGCRecord</span>
+<span class="sd">        &gt;&gt;&gt; from ogc_records_parquet import records_to_arrow</span>
+<span class="sd">        &gt;&gt;&gt; record = OGCRecord(id="workflow", properties={"title": "Flood mapping"})</span>
+<span class="sd">        &gt;&gt;&gt; table = records_to_arrow([record], batch_size=1).read_all()</span>
+<span class="sd">        &gt;&gt;&gt; table["properties.title"].to_pylist()</span>
+<span class="sd">        ['Flood mapping']</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">batch_size</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"batch_size must be greater than zero"</span><span class="p">)</span>
+    <span class="n">projections</span> <span class="o">=</span> <span class="n">default_schema</span><span class="p">()</span> <span class="k">if</span> <span class="n">schema</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">schema</span>
+    <span class="n">validate_schema</span><span class="p">(</span><span class="n">projections</span><span class="p">)</span>
+    <span class="n">catalogs</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">collections</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">require_json_object</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">collections</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">catalogs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">catalog</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">for</span> <span class="n">catalog</span> <span class="ow">in</span> <span class="n">catalogs</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Collection metadata must map IDs to catalog JSON objects"</span><span class="p">)</span>
+    <span class="n">output_schema</span> <span class="o">=</span> <span class="n">storage_schema</span><span class="p">(</span><span class="n">projections</span><span class="p">,</span> <span class="n">catalogs</span><span class="p">)</span>
+    <span class="n">batches</span> <span class="o">=</span> <span class="n">record_batches</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">projections</span><span class="p">,</span> <span class="n">output_schema</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">collection_ids</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">RecordBatchReader</span><span class="o">.</span><span class="n">from_batches</span><span class="p">(</span><span class="n">output_schema</span><span class="p">,</span> <span class="n">batches</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h1 id="ogc_records_parquet.arrow_to_records" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">arrow_to_records</span><span class="p">(</span><span class="n">table</span><span class="p">)</span></code>
+
+<a href="#ogc_records_parquet.arrow_to_records" class="headerlink" title="Permanent link">&para;</a></h1>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Decode OGCRecord objects from a library-produced Arrow stream.</p>
+<p>Stored payloads are authoritative: editing query or membership columns does
+not edit the exported records. Decoding follows <code>OGCRecord.from_dict()</code>,
+including its normalization rules for legacy payloads. No OGC profile
+validation is performed.</p>
+<p>Validation and decoding begin on iteration, not when this function is called.
+A supplied reader is consumed from its current position. A table is not
+modified. Storage formats <code>1.0.0</code> and <code>1.1.0</code> are accepted.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>table</code></b>
+                  (<code><span title="pyarrow.Table">Table</span> | <span title="pyarrow.RecordBatchReader">RecordBatchReader</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Table or stream retaining valid <code>ogc-records-parquet</code> schema
+metadata and <code>__record_json</code>. Payload columns may have Arrow string
+or large-string type, but every row must contain non-null JSON text.
+Geometry, membership, and query columns may be omitted.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Yields:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="pystac.extensions.ogc_record.OGCRecord">OGCRecord</span></code>
+              –
+              <div class="doc-md-description">
+                <p>Independently decoded OGCRecord objects in row order. Changes to a yielded</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="pystac.extensions.ogc_record.OGCRecord">OGCRecord</span></code>
+              –
+              <div class="doc-md-description">
+                <p>record do not modify the input or other yielded records. Empty input</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="pystac.extensions.ogc_record.OGCRecord">OGCRecord</span></code>
+              –
+              <div class="doc-md-description">
+                <p>with valid metadata and payload schema yields no records.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="ValueError">ValueError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>During iteration if format metadata or payload columns are
+missing or incompatible, a payload is null or is not a JSON object,
+JSON contains duplicate keys or non-finite numbers, or PySTAC rejects
+the Record document. JSON syntax errors are <code>json.JSONDecodeError</code>,
+a subclass of <code>ValueError</code>.</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="TypeError">TypeError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If PySTAC cannot parse a metadata timestamp's Python type.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <p>Reconstruct from only the payload column, retaining schema metadata:</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pystac.extensions.ogc_record</span><span class="w"> </span><span class="kn">import</span> <span class="n">OGCRecord</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ogc_records_parquet</span><span class="w"> </span><span class="kn">import</span> <span class="n">arrow_to_records</span><span class="p">,</span> <span class="n">records_to_arrow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">records_to_arrow</span><span class="p">([</span><span class="n">OGCRecord</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"workflow"</span><span class="p">)])</span><span class="o">.</span><span class="n">read_all</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">restored</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">arrow_to_records</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="s2">"__record_json"</span><span class="p">])))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">restored</span><span class="o">.</span><span class="n">id</span>
+<span class="go">'workflow'</span>
+</code></pre></div>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>src/ogc_records_parquet/arrow.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">arrow_to_records</span><span class="p">(</span><span class="n">table</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pa</span><span class="o">.</span><span class="n">RecordBatchReader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">OGCRecord</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Decode OGCRecord objects from a library-produced Arrow stream.</span>
+
+<span class="sd">    Stored payloads are authoritative: editing query or membership columns does</span>
+<span class="sd">    not edit the exported records. Decoding follows `OGCRecord.from_dict()`,</span>
+<span class="sd">    including its normalization rules for legacy payloads. No OGC profile</span>
+<span class="sd">    validation is performed.</span>
+
+<span class="sd">    Validation and decoding begin on iteration, not when this function is called.</span>
+<span class="sd">    A supplied reader is consumed from its current position. A table is not</span>
+<span class="sd">    modified. Storage formats `1.0.0` and `1.1.0` are accepted.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        table: Table or stream retaining valid `ogc-records-parquet` schema</span>
+<span class="sd">            metadata and `__record_json`. Payload columns may have Arrow string</span>
+<span class="sd">            or large-string type, but every row must contain non-null JSON text.</span>
+<span class="sd">            Geometry, membership, and query columns may be omitted.</span>
+
+<span class="sd">    Yields:</span>
+<span class="sd">        Independently decoded OGCRecord objects in row order. Changes to a yielded</span>
+<span class="sd">        record do not modify the input or other yielded records. Empty input</span>
+<span class="sd">        with valid metadata and payload schema yields no records.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: During iteration if format metadata or payload columns are</span>
+<span class="sd">            missing or incompatible, a payload is null or is not a JSON object,</span>
+<span class="sd">            JSON contains duplicate keys or non-finite numbers, or PySTAC rejects</span>
+<span class="sd">            the Record document. JSON syntax errors are `json.JSONDecodeError`,</span>
+<span class="sd">            a subclass of `ValueError`.</span>
+<span class="sd">        TypeError: If PySTAC cannot parse a metadata timestamp's Python type.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        Reconstruct from only the payload column, retaining schema metadata:</span>
+
+<span class="sd">        &gt;&gt;&gt; from pystac.extensions.ogc_record import OGCRecord</span>
+<span class="sd">        &gt;&gt;&gt; from ogc_records_parquet import arrow_to_records, records_to_arrow</span>
+<span class="sd">        &gt;&gt;&gt; table = records_to_arrow([OGCRecord(id="workflow")]).read_all()</span>
+<span class="sd">        &gt;&gt;&gt; restored = next(arrow_to_records(table.select(["__record_json"])))</span>
+<span class="sd">        &gt;&gt;&gt; restored.id</span>
+<span class="sd">        'workflow'</span>
+<span class="sd">    """</span>
+    <span class="n">read_format_metadata</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">schema</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">PAYLOAD_COLUMN</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">names</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Missing original Record JSON payload column"</span><span class="p">)</span>
+    <span class="n">payload_type</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">PAYLOAD_COLUMN</span><span class="p">)</span><span class="o">.</span><span class="n">type</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_string</span><span class="p">(</span><span class="n">payload_type</span><span class="p">)</span> <span class="ow">or</span> <span class="n">pa</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_large_string</span><span class="p">(</span><span class="n">payload_type</span><span class="p">)):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Original Record JSON payload column must contain strings"</span><span class="p">)</span>
+    <span class="n">batches</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">to_batches</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span><span class="p">)</span> <span class="k">else</span> <span class="n">table</span>
+    <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">batches</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">payload</span> <span class="ow">in</span> <span class="n">batch</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="n">PAYLOAD_COLUMN</span><span class="p">):</span>
+            <span class="n">encoded</span> <span class="o">=</span> <span class="n">payload</span><span class="o">.</span><span class="n">as_py</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">encoded</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Original Record JSON payload must be non-null"</span><span class="p">)</span>
+            <span class="k">yield</span> <span class="n">OGCRecord</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">loads_object</span><span class="p">(</span><span class="n">encoded</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h1 id="ogc_records_parquet.to_parquet" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">to_parquet</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="s1">'zstd'</span><span class="p">)</span></code>
+
+<a href="#ogc_records_parquet.to_parquet" class="headerlink" title="Permanent link">&para;</a></h1>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Write a library-produced Arrow stream to a local GeoParquet file.</p>
+<p>Consumes batches in source order and replaces an existing destination only
+after successful conversion and writing. A failed conversion leaves the
+destination unchanged. Temporary data is created in the destination directory.
+Remote/object-storage paths are not supported.</p>
+<p>Schema metadata and the supplied storage format version are retained;
+writing a valid legacy stream does not upgrade it. Storage structure is
+checked, but arbitrary input tables do not receive per-payload Record or
+OGC schema validation.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>table</code></b>
+                  (<code><span title="pyarrow.Table">Table</span> | <span title="pyarrow.RecordBatchReader">RecordBatchReader</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>A table or unconsumed reader produced by <code>records_to_arrow()</code>,
+or an equivalent table retaining the required storage columns and
+metadata. A reader is consumed from its current position; a table
+can be reused. Empty input still creates a file with its schema.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>path</code></b>
+                  (<code><span title="str">str</span> | <span title="pathlib.Path">Path</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Local destination file. Its parent directory must already exist.
+An existing file is replaced on success.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>compression</code></b>
+                  (<code><span title="typing.Literal">Literal</span>[&#39;gzip&#39;, &#39;brotli&#39;, &#39;lz4&#39;, &#39;zstd&#39;, &#39;snappy&#39;, &#39;none&#39;]</code>, default:
+                      <code>&#39;zstd&#39;</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Parquet codec, defaulting to <code>"zstd"</code>. Use <code>"none"</code> for
+uncompressed output. Codec availability depends on the PyArrow build.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="ValueError">ValueError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If format metadata or required storage columns are invalid,
+or if lazy record conversion raises a validation error.</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="OSError">OSError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If the destination directory is absent, inaccessible, or a file
+operation fails.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <p>Write a local file and read its records:</p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">tempfile</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemporaryDirectory</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pystac.extensions.ogc_record</span><span class="w"> </span><span class="kn">import</span> <span class="n">OGCRecord</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ogc_records_parquet</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_parquet</span><span class="p">,</span> <span class="n">records_to_arrow</span><span class="p">,</span> <span class="n">to_parquet</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">directory</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span> <span class="o">/</span> <span class="s2">"records.parquet"</span>
+<span class="gp">... </span>    <span class="n">to_parquet</span><span class="p">(</span><span class="n">records_to_arrow</span><span class="p">([</span><span class="n">OGCRecord</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"workflow"</span><span class="p">)]),</span> <span class="n">path</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">identifiers</span> <span class="o">=</span> <span class="p">[</span><span class="n">record</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">read_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">identifiers</span>
+<span class="go">['workflow']</span>
+</code></pre></div>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>src/ogc_records_parquet/parquet.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">to_parquet</span><span class="p">(</span>
+    <span class="n">table</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pa</span><span class="o">.</span><span class="n">RecordBatchReader</span><span class="p">,</span>
+    <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">compression</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">"gzip"</span><span class="p">,</span> <span class="s2">"brotli"</span><span class="p">,</span> <span class="s2">"lz4"</span><span class="p">,</span> <span class="s2">"zstd"</span><span class="p">,</span> <span class="s2">"snappy"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"zstd"</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Write a library-produced Arrow stream to a local GeoParquet file.</span>
+
+<span class="sd">    Consumes batches in source order and replaces an existing destination only</span>
+<span class="sd">    after successful conversion and writing. A failed conversion leaves the</span>
+<span class="sd">    destination unchanged. Temporary data is created in the destination directory.</span>
+<span class="sd">    Remote/object-storage paths are not supported.</span>
+
+<span class="sd">    Schema metadata and the supplied storage format version are retained;</span>
+<span class="sd">    writing a valid legacy stream does not upgrade it. Storage structure is</span>
+<span class="sd">    checked, but arbitrary input tables do not receive per-payload Record or</span>
+<span class="sd">    OGC schema validation.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        table: A table or unconsumed reader produced by `records_to_arrow()`,</span>
+<span class="sd">            or an equivalent table retaining the required storage columns and</span>
+<span class="sd">            metadata. A reader is consumed from its current position; a table</span>
+<span class="sd">            can be reused. Empty input still creates a file with its schema.</span>
+<span class="sd">        path: Local destination file. Its parent directory must already exist.</span>
+<span class="sd">            An existing file is replaced on success.</span>
+<span class="sd">        compression: Parquet codec, defaulting to `"zstd"`. Use `"none"` for</span>
+<span class="sd">            uncompressed output. Codec availability depends on the PyArrow build.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If format metadata or required storage columns are invalid,</span>
+<span class="sd">            or if lazy record conversion raises a validation error.</span>
+<span class="sd">        OSError: If the destination directory is absent, inaccessible, or a file</span>
+<span class="sd">            operation fails.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        Write a local file and read its records:</span>
+
+<span class="sd">        &gt;&gt;&gt; from pathlib import Path</span>
+<span class="sd">        &gt;&gt;&gt; from tempfile import TemporaryDirectory</span>
+<span class="sd">        &gt;&gt;&gt; from pystac.extensions.ogc_record import OGCRecord</span>
+<span class="sd">        &gt;&gt;&gt; from ogc_records_parquet import read_parquet, records_to_arrow, to_parquet</span>
+<span class="sd">        &gt;&gt;&gt; with TemporaryDirectory() as directory:</span>
+<span class="sd">        ...     path = Path(directory) / "records.parquet"</span>
+<span class="sd">        ...     to_parquet(records_to_arrow([OGCRecord(id="workflow")]), path)</span>
+<span class="sd">        ...     identifiers = [record.id for record in read_parquet(path)]</span>
+<span class="sd">        &gt;&gt;&gt; identifiers</span>
+<span class="sd">        ['workflow']</span>
+<span class="sd">    """</span>
+    <span class="n">validate_storage_schema</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">schema</span><span class="p">)</span>
+    <span class="n">destination</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">(</span>
+        <span class="n">prefix</span><span class="o">=</span><span class="s2">".records-parquet-"</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="n">destination</span><span class="o">.</span><span class="n">parent</span>
+    <span class="p">)</span> <span class="k">as</span> <span class="n">directory</span><span class="p">:</span>
+        <span class="n">staging</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span> <span class="o">/</span> <span class="s2">"records.parquet"</span>
+        <span class="n">batches</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">to_batches</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span><span class="p">)</span> <span class="k">else</span> <span class="n">table</span>
+        <span class="k">with</span> <span class="n">pq</span><span class="o">.</span><span class="n">ParquetWriter</span><span class="p">(</span><span class="n">staging</span><span class="p">,</span> <span class="n">table</span><span class="o">.</span><span class="n">schema</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">batches</span><span class="p">:</span>
+                <span class="n">writer</span><span class="o">.</span><span class="n">write_batch</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+        <span class="n">staging</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">destination</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h1 id="ogc_records_parquet.read_parquet" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">read_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span></code>
+
+<a href="#ogc_records_parquet.read_parquet" class="headerlink" title="Permanent link">&para;</a></h1>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Read OGCRecord objects in file order from GeoParquet.</p>
+<p>Opens the file and validates its format when iteration begins. Records are
+reconstructed from their stored JSON payloads, not from query projections.
+Storage formats <code>1.0.0</code> and <code>1.1.0</code> are accepted; current PySTAC parsing
+and normalization apply to both.</p>
+<p>The file remains open while the iterator is active. Exhaust the iterator or
+call its <code>close()</code> method when abandoning iteration early.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>path</code></b>
+                  (<code><span title="str">str</span> | <span title="pathlib.Path">Path</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Parquet file produced by this library, retaining format metadata,
+payloads, and the membership schema required by its format version.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>batch_size</code></b>
+                  (<code><span title="int">int</span></code>, default:
+                      <code>1024</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Maximum rows per decoded batch, greater than zero. It does
+not limit the total number of yielded records or their size.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Yields:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="pystac.extensions.ogc_record.OGCRecord">OGCRecord</span></code>
+              –
+              <div class="doc-md-description">
+                <p>Independent OGCRecord objects in file order. Empty files yield no records.</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="pystac.extensions.ogc_record.OGCRecord">OGCRecord</span></code>
+              –
+              <div class="doc-md-description">
+                <p>Storage-only memberships are available separately through</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="pystac.extensions.ogc_record.OGCRecord">OGCRecord</span></code>
+              –
+              <div class="doc-md-description">
+                <p><code>read_collection_ids()</code>; they are not injected into the records.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="ValueError">ValueError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>During iteration if the batch size is invalid, format metadata
+or membership schema is missing or incompatible, or a stored payload
+fails JSON or Record validation.</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="TypeError">TypeError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If PySTAC cannot parse a metadata timestamp's Python type.</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="OSError">OSError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If the file cannot be opened or read.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>src/ogc_records_parquet/parquet.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">read_parquet</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">OGCRecord</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Read OGCRecord objects in file order from GeoParquet.</span>
+
+<span class="sd">    Opens the file and validates its format when iteration begins. Records are</span>
+<span class="sd">    reconstructed from their stored JSON payloads, not from query projections.</span>
+<span class="sd">    Storage formats `1.0.0` and `1.1.0` are accepted; current PySTAC parsing</span>
+<span class="sd">    and normalization apply to both.</span>
+
+<span class="sd">    The file remains open while the iterator is active. Exhaust the iterator or</span>
+<span class="sd">    call its `close()` method when abandoning iteration early.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path: Parquet file produced by this library, retaining format metadata,</span>
+<span class="sd">            payloads, and the membership schema required by its format version.</span>
+<span class="sd">        batch_size: Maximum rows per decoded batch, greater than zero. It does</span>
+<span class="sd">            not limit the total number of yielded records or their size.</span>
+
+<span class="sd">    Yields:</span>
+<span class="sd">        Independent OGCRecord objects in file order. Empty files yield no records.</span>
+<span class="sd">        Storage-only memberships are available separately through</span>
+<span class="sd">        `read_collection_ids()`; they are not injected into the records.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: During iteration if the batch size is invalid, format metadata</span>
+<span class="sd">            or membership schema is missing or incompatible, or a stored payload</span>
+<span class="sd">            fails JSON or Record validation.</span>
+<span class="sd">        TypeError: If PySTAC cannot parse a metadata timestamp's Python type.</span>
+<span class="sd">        OSError: If the file cannot be opened or read.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">batch_size</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"batch_size must be greater than zero"</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">pq</span><span class="o">.</span><span class="n">ParquetFile</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">parquet_file</span><span class="p">:</span>
+        <span class="n">schema</span> <span class="o">=</span> <span class="n">parquet_file</span><span class="o">.</span><span class="n">schema_arrow</span>
+        <span class="n">validate_membership_schema</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">RecordBatchReader</span><span class="o">.</span><span class="n">from_batches</span><span class="p">(</span>
+            <span class="n">schema</span><span class="p">,</span> <span class="n">parquet_file</span><span class="o">.</span><span class="n">iter_batches</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">yield from</span> <span class="n">arrow_to_records</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h1 id="ogc_records_parquet.read_metadata" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">read_metadata</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
+
+<a href="#ogc_records_parquet.read_metadata" class="headerlink" title="Permanent link">&para;</a></h1>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Read the library's format metadata without decoding Record payloads.</p>
+<p>Reads the Parquet schema and returns its <code>ogc-records-parquet</code> metadata.
+It does not return the complete Arrow or GeoParquet metadata, validate
+storage column types, or inspect row membership values.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>path</code></b>
+                  (<code><span title="str">str</span> | <span title="pathlib.Path">Path</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Parquet file containing supported library format metadata.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><a class="autorefs autorefs-internal" title="JSONObject = dict[str, JSONValue]
+
+  
+      module-attribute
+   (ogc_records_parquet._json.JSONObject)" href="#ogc_records_parquet.JSONObject">JSONObject</a></code>
+              –
+              <div class="doc-md-description">
+                <p>A newly decoded object containing <code>version</code>, <code>payload_column</code>, and,</p>
+              </div>
+            </li>
+            <li>
+                  <code><a class="autorefs autorefs-internal" title="JSONObject = dict[str, JSONValue]
+
+  
+      module-attribute
+   (ogc_records_parquet._json.JSONObject)" href="#ogc_records_parquet.JSONObject">JSONObject</a></code>
+              –
+              <div class="doc-md-description">
+                <p>for format <code>1.1.0</code>, <code>membership_column</code>. Library-created metadata also</p>
+              </div>
+            </li>
+            <li>
+                  <code><a class="autorefs autorefs-internal" title="JSONObject = dict[str, JSONValue]
+
+  
+      module-attribute
+   (ogc_records_parquet._json.JSONObject)" href="#ogc_records_parquet.JSONObject">JSONObject</a></code>
+              –
+              <div class="doc-md-description">
+                <p>includes <code>writer_version</code>, <code>projections</code>, and optional <code>collections</code>.</p>
+              </div>
+            </li>
+            <li>
+                  <code><a class="autorefs autorefs-internal" title="JSONObject = dict[str, JSONValue]
+
+  
+      module-attribute
+   (ogc_records_parquet._json.JSONObject)" href="#ogc_records_parquet.JSONObject">JSONObject</a></code>
+              –
+              <div class="doc-md-description">
+                <p>Modifying this object does not change the file.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="ValueError">ValueError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If metadata is missing, malformed JSON, uses an unsupported
+version, or declares unsupported payload or membership column names.</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="OSError">OSError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If the file cannot be opened or its schema cannot be read.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>src/ogc_records_parquet/parquet.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">read_metadata</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">JSONObject</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Read the library's format metadata without decoding Record payloads.</span>
+
+<span class="sd">    Reads the Parquet schema and returns its `ogc-records-parquet` metadata.</span>
+<span class="sd">    It does not return the complete Arrow or GeoParquet metadata, validate</span>
+<span class="sd">    storage column types, or inspect row membership values.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path: Parquet file containing supported library format metadata.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A newly decoded object containing `version`, `payload_column`, and,</span>
+<span class="sd">        for format `1.1.0`, `membership_column`. Library-created metadata also</span>
+<span class="sd">        includes `writer_version`, `projections`, and optional `collections`.</span>
+<span class="sd">        Modifying this object does not change the file.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If metadata is missing, malformed JSON, uses an unsupported</span>
+<span class="sd">            version, or declares unsupported payload or membership column names.</span>
+<span class="sd">        OSError: If the file cannot be opened or its schema cannot be read.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">read_format_metadata</span><span class="p">(</span><span class="n">pq</span><span class="o">.</span><span class="n">read_schema</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h1 id="ogc_records_parquet.read_collections" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">read_collections</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
+
+<a href="#ogc_records_parquet.read_collections" class="headerlink" title="Permanent link">&para;</a></h1>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Read stored collection descriptions independently of row membership.</p>
+<p>Only schema metadata is read; Record payloads are not decoded. Descriptions
+neither assign membership nor validate the IDs in <code>__collection_id</code>.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>path</code></b>
+                  (<code><span title="str">str</span> | <span title="pathlib.Path">Path</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Parquet file containing supported library format metadata.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><a class="autorefs autorefs-internal" title="JSONObject = dict[str, JSONValue]
+
+  
+      module-attribute
+   (ogc_records_parquet._json.JSONObject)" href="#ogc_records_parquet.JSONObject">JSONObject</a></code>
+              –
+              <div class="doc-md-description">
+                <p>A newly decoded mapping of catalog descriptions keyed by collection ID.</p>
+              </div>
+            </li>
+            <li>
+                  <code><a class="autorefs autorefs-internal" title="JSONObject = dict[str, JSONValue]
+
+  
+      module-attribute
+   (ogc_records_parquet._json.JSONObject)" href="#ogc_records_parquet.JSONObject">JSONObject</a></code>
+              –
+              <div class="doc-md-description">
+                <p>Returns an empty mapping when descriptions are absent or explicitly</p>
+              </div>
+            </li>
+            <li>
+                  <code><a class="autorefs autorefs-internal" title="JSONObject = dict[str, JSONValue]
+
+  
+      module-attribute
+   (ogc_records_parquet._json.JSONObject)" href="#ogc_records_parquet.JSONObject">JSONObject</a></code>
+              –
+              <div class="doc-md-description">
+                <p>empty. Catalog contents and the relationship between mapping keys and</p>
+              </div>
+            </li>
+            <li>
+                  <code><a class="autorefs autorefs-internal" title="JSONObject = dict[str, JSONValue]
+
+  
+      module-attribute
+   (ogc_records_parquet._json.JSONObject)" href="#ogc_records_parquet.JSONObject">JSONObject</a></code>
+              –
+              <div class="doc-md-description">
+                <p>catalog IDs are not semantically validated. Changes do not alter the file.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="ValueError">ValueError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If format metadata is missing or invalid, or the stored
+<code>collections</code> value is not a JSON object.</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="OSError">OSError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If the file cannot be opened or its schema cannot be read.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>src/ogc_records_parquet/parquet.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">read_collections</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">JSONObject</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Read stored collection descriptions independently of row membership.</span>
+
+<span class="sd">    Only schema metadata is read; Record payloads are not decoded. Descriptions</span>
+<span class="sd">    neither assign membership nor validate the IDs in `__collection_id`.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path: Parquet file containing supported library format metadata.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A newly decoded mapping of catalog descriptions keyed by collection ID.</span>
+<span class="sd">        Returns an empty mapping when descriptions are absent or explicitly</span>
+<span class="sd">        empty. Catalog contents and the relationship between mapping keys and</span>
+<span class="sd">        catalog IDs are not semantically validated. Changes do not alter the file.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If format metadata is missing or invalid, or the stored</span>
+<span class="sd">            `collections` value is not a JSON object.</span>
+<span class="sd">        OSError: If the file cannot be opened or its schema cannot be read.</span>
+<span class="sd">    """</span>
+    <span class="n">collections</span> <span class="o">=</span> <span class="n">read_metadata</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"collections"</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">collections</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Stored collections metadata must be an object"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">collections</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h1 id="ogc_records_parquet.read_collection_ids" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">read_collection_ids</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span></code>
+
+<a href="#ogc_records_parquet.read_collection_ids" class="headerlink" title="Permanent link">&para;</a></h1>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Read storage-only memberships in file row order, independently of Record JSON.</p>
+<p>File access and validation begin on iteration. Format <code>1.1.0</code> reads only
+the membership column; Record payloads are not decoded or validated. Format
+<code>1.0.0</code> returns unknown membership for every row, even if descriptions or
+a similarly named column exist.</p>
+<p>The file remains open until the iterator is exhausted or closed. Pair its
+results with records only when reading identical rows in identical order.
+Duplicate record IDs do not affect membership.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>path</code></b>
+                  (<code><span title="str">str</span> | <span title="pathlib.Path">Path</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>A library-produced Parquet file in format 1.0.0 or 1.1.0.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>batch_size</code></b>
+                  (<code><span title="int">int</span></code>, default:
+                      <code>1024</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Maximum membership rows read per batch, greater than zero.
+It does not limit the total number of yielded memberships.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Yields:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="str">str</span> | None</code>
+              –
+              <div class="doc-md-description">
+                <p>One non-empty collection ID or <code>None</code> per row. IDs need not have a</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="str">str</span> | None</code>
+              –
+              <div class="doc-md-description">
+                <p>corresponding stored description. Empty files yield no values.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="ValueError">ValueError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>During iteration if batch size or format metadata is invalid,
+format <code>1.1.0</code> lacks a single nullable string membership column, or
+a stored membership is neither a non-empty string nor null.</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="OSError">OSError</span></code>
+              –
+              <div class="doc-md-description">
+                <p>If the file cannot be opened or read.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>src/ogc_records_parquet/parquet.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">read_collection_ids</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Read storage-only memberships in file row order, independently of Record JSON.</span>
+
+<span class="sd">    File access and validation begin on iteration. Format `1.1.0` reads only</span>
+<span class="sd">    the membership column; Record payloads are not decoded or validated. Format</span>
+<span class="sd">    `1.0.0` returns unknown membership for every row, even if descriptions or</span>
+<span class="sd">    a similarly named column exist.</span>
+
+<span class="sd">    The file remains open until the iterator is exhausted or closed. Pair its</span>
+<span class="sd">    results with records only when reading identical rows in identical order.</span>
+<span class="sd">    Duplicate record IDs do not affect membership.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path: A library-produced Parquet file in format 1.0.0 or 1.1.0.</span>
+<span class="sd">        batch_size: Maximum membership rows read per batch, greater than zero.</span>
+<span class="sd">            It does not limit the total number of yielded memberships.</span>
+
+<span class="sd">    Yields:</span>
+<span class="sd">        One non-empty collection ID or `None` per row. IDs need not have a</span>
+<span class="sd">        corresponding stored description. Empty files yield no values.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: During iteration if batch size or format metadata is invalid,</span>
+<span class="sd">            format `1.1.0` lacks a single nullable string membership column, or</span>
+<span class="sd">            a stored membership is neither a non-empty string nor null.</span>
+<span class="sd">        OSError: If the file cannot be opened or read.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">batch_size</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"batch_size must be greater than zero"</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">pq</span><span class="o">.</span><span class="n">ParquetFile</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">parquet_file</span><span class="p">:</span>
+        <span class="n">validate_membership_schema</span><span class="p">(</span><span class="n">parquet_file</span><span class="o">.</span><span class="n">schema_arrow</span><span class="p">)</span>
+        <span class="n">metadata</span> <span class="o">=</span> <span class="n">read_format_metadata</span><span class="p">(</span><span class="n">parquet_file</span><span class="o">.</span><span class="n">schema_arrow</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">metadata</span><span class="p">[</span><span class="s2">"version"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"1.0.0"</span><span class="p">:</span>
+            <span class="k">yield from</span> <span class="p">(</span><span class="kc">None</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">parquet_file</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">num_rows</span><span class="p">))</span>
+            <span class="k">return</span>
+        <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">parquet_file</span><span class="o">.</span><span class="n">iter_batches</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">MEMBERSHIP_COLUMN</span><span class="p">]):</span>
+            <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">batch</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="n">MEMBERSHIP_COLUMN</span><span class="p">):</span>
+                <span class="n">membership</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">as_py</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">membership</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">membership</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="n">membership</span> <span class="o">==</span> <span class="s2">""</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Collection membership must be a non-empty string or null"</span><span class="p">)</span>
+                <span class="k">yield</span> <span class="n">membership</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h1 id="ogc_records_parquet.default_schema" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">default_schema</span><span class="p">()</span></code>
+
+<a href="#ogc_records_parquet.default_schema" class="headerlink" title="Permanent link">&para;</a></h1>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return stable query projections of common Records members.</p>
+<p>All fields are nullable. The projection names are literal Arrow column names
+and dot-separated lookup paths in serialized Record objects.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Arrow type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>properties.type</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>properties.title</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>properties.description</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>properties.created</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>properties.updated</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>properties.keywords</code></td>
+<td>list of string</td>
+</tr>
+</tbody>
+</table>
+<p>Integer identifiers are converted to strings only in the query column.
+Timestamp columns contain PySTAC's serialized strings, including its
+normalization. Original serialized values remain authoritative in the
+payload. This schema does not validate OGC conformance.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="pyarrow.Schema">Schema</span></code>
+              –
+              <div class="doc-md-description">
+                <p>A new query schema without storage columns or format metadata.</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="pyarrow.Schema">Schema</span></code>
+              –
+              <div class="doc-md-description">
+                <p><code>records_to_arrow()</code> adds those when creating a stream. Pass a different</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="pyarrow.Schema">Schema</span></code>
+              –
+              <div class="doc-md-description">
+                <p>schema to that function to select other fields or Arrow types.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ogc_records_parquet</span><span class="w"> </span><span class="kn">import</span> <span class="n">default_schema</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span> <span class="o">=</span> <span class="n">default_schema</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">"properties.title"</span><span class="p">)</span><span class="o">.</span><span class="n">nullable</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">"__record_json"</span> <span class="ow">in</span> <span class="n">schema</span><span class="o">.</span><span class="n">names</span>
+<span class="go">False</span>
+</code></pre></div>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>src/ogc_records_parquet/_schema.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">default_schema</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Schema</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Return stable query projections of common Records members.</span>
+
+<span class="sd">    All fields are nullable. The projection names are literal Arrow column names</span>
+<span class="sd">    and dot-separated lookup paths in serialized Record objects.</span>
+
+<span class="sd">    | Field | Arrow type |</span>
+<span class="sd">    | --- | --- |</span>
+<span class="sd">    | `id` | string |</span>
+<span class="sd">    | `type` | string |</span>
+<span class="sd">    | `properties.type` | string |</span>
+<span class="sd">    | `properties.title` | string |</span>
+<span class="sd">    | `properties.description` | string |</span>
+<span class="sd">    | `properties.created` | string |</span>
+<span class="sd">    | `properties.updated` | string |</span>
+<span class="sd">    | `properties.keywords` | list of string |</span>
+
+<span class="sd">    Integer identifiers are converted to strings only in the query column.</span>
+<span class="sd">    Timestamp columns contain PySTAC's serialized strings, including its</span>
+<span class="sd">    normalization. Original serialized values remain authoritative in the</span>
+<span class="sd">    payload. This schema does not validate OGC conformance.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A new query schema without storage columns or format metadata.</span>
+<span class="sd">        `records_to_arrow()` adds those when creating a stream. Pass a different</span>
+<span class="sd">        schema to that function to select other fields or Arrow types.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; from ogc_records_parquet import default_schema</span>
+<span class="sd">        &gt;&gt;&gt; schema = default_schema()</span>
+<span class="sd">        &gt;&gt;&gt; schema.field("properties.title").nullable</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; "__record_json" in schema.names</span>
+<span class="sd">        False</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">"id"</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()),</span>
+            <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">"type"</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()),</span>
+            <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">"properties.type"</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()),</span>
+            <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">"properties.title"</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()),</span>
+            <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">"properties.description"</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()),</span>
+            <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">"properties.created"</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()),</span>
+            <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">"properties.updated"</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()),</span>
+            <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">"properties.keywords"</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">list_</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">())),</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h1 id="ogc_records_parquet.JSONValue" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">JSONValue</span> <span class="o">=</span> <span class="nb">bool</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="s1">'JSONValue'</span><span class="p">]</span> <span class="o">|</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">'JSONValue'</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#ogc_records_parquet.JSONValue" class="headerlink" title="Permanent link">&para;</a></h1>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Recursive type alias for JSON scalars, lists, objects, and null.</p>
+<p>This alias describes generic JSON values, not an OGC Record schema. Storage
+validation additionally rejects non-finite floats; annotations alone cannot
+express that constraint. Tuples and non-string object keys are not accepted.</p>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h1 id="ogc_records_parquet.JSONObject" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">JSONObject</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">JSONValue</span><span class="p">]</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#ogc_records_parquet.JSONObject" class="headerlink" title="Permanent link">&para;</a></h1>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Type alias for a JSON object with string keys and recursively JSON-compatible values.</p>
+<p>Used for decoded file metadata and catalog descriptions. It is not a Record
+model or a validation function; use <code>OGCRecord</code> for record manipulation.</p>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h1 id="ogc_records_parquet.__version__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">__version__</span> <span class="o">=</span> <span class="s1">'0.1.0'</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#ogc_records_parquet.__version__" class="headerlink" title="Permanent link">&para;</a></h1>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Package version recorded as <code>writer_version</code> when a storage schema is created.</p>
+<p>This version is independent of the OGC Records storage format and GeoParquet
+metadata versions. Rewriting an existing Arrow schema preserves its metadata.</p>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../how-to/develop/" class="btn btn-neutral float-left" title="Develop and build documentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../cli/" class="btn btn-neutral float-right" title="Command-line interface">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Terradue/ogc-records-parquet" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../how-to/develop/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../cli/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

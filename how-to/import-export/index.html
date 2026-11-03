@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://Terradue.github.io/ogc-records-parquet/how-to/import-export/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Import and export records - OG API Records - Parquet</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Import and export records";
+        var mkdocs_page_input_path = "how-to/import-export.md";
+        var mkdocs_page_url = "/ogc-records-parquet/how-to/import-export/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OG API Records - Parquet
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorials/first-round-trip/">Your first round trip</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">How-to guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Import and export records</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#import-an-example-file">Import an example file</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#read-without-adding-a-source-self-link">Read without adding a source self link</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#edit-links-and-assets">Edit links and assets</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../project-filter/">Project and filter records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../collections/">Store collection membership</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../migrate/">Migrate existing applications and files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../develop/">Develop and build documentation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/api/">Python API</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/cli/">Command-line interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/storage-format/">Storage format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/limitations/">Errors and limitations</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Explanation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../explanation/preservation/">Preservation and projections</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../explanation/ogc-and-stac/">OGC Records and STAC</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OG API Records - Parquet</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">How-to guides</li>
+      <li class="breadcrumb-item active">Import and export records</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Terradue/ogc-records-parquet/edit/master/docs/how-to/import-export.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="import-and-export-records">Import and export records<a class="headerlink" href="#import-and-export-records" title="Permanent link">&para;</a></h1>
+<p>Use PySTAC for individual JSON documents. Install the package in your local
+checkout before running these examples from the repository root.</p>
+<p>For shell-based imports from local files or remote URLs, see the
+<a href="../../reference/cli/">command-line interface</a>.</p>
+<h2 id="import-an-example-file">Import an example file<a class="headerlink" href="#import-an-example-file" title="Permanent link">&para;</a></h2>
+<pre><code class="language-python">from pathlib import Path
+
+from pystac.extensions.ogc_record import OGCRecord
+
+from ogc_records_parquet import read_parquet, records_to_arrow, to_parquet
+
+source = Path(
+    &quot;examples/ogc-records/hazard-mapping/records/diachronic-flood-detection.json&quot;
+)
+record = OGCRecord.from_file(source)
+to_parquet(records_to_arrow([record]), &quot;imported.parquet&quot;)
+
+restored = next(read_parquet(&quot;imported.parquet&quot;))
+assert restored.to_dict(transform_hrefs=False) == record.to_dict(transform_hrefs=False)
+restored.save_object(dest_href=&quot;exported-record.json&quot;)
+</code></pre>
+<p><code>from_file()</code> assigns a self link to the source file. Storage includes that
+link and preserves relative hrefs without rewriting them.</p>
+<h2 id="read-without-adding-a-source-self-link">Read without adding a source self link<a class="headerlink" href="#read-without-adding-a-source-self-link" title="Permanent link">&para;</a></h2>
+<p>Use the following alternative when only links present in the document should
+be retained:</p>
+<pre><code class="language-python">from pystac import StacIO
+from pystac.extensions.ogc_record import OGCRecord
+
+document = StacIO.default().read_json(
+    &quot;examples/ogc-records/hazard-mapping/records/diachronic-flood-detection.json&quot;
+)
+record = OGCRecord.from_dict(document)
+</code></pre>
+<p>For in-memory dictionaries, likewise call <code>OGCRecord.from_dict(document)</code>
+before <code>records_to_arrow()</code>. Select records from arrays or FeatureCollections
+in the calling application. The package does not provide JSON container or
+NDJSON readers.</p>
+<h2 id="edit-links-and-assets">Edit links and assets<a class="headerlink" href="#edit-links-and-assets" title="Permanent link">&para;</a></h2>
+<p>Use the record's PySTAC APIs before storing it again:</p>
+<pre><code class="language-python">from pystac import Asset, Link
+from pystac.extensions.ogc_record import OGCRecord
+
+from ogc_records_parquet import records_to_arrow, to_parquet
+
+record = OGCRecord(id=&quot;workflow&quot;, properties={&quot;title&quot;: &quot;Flood workflow&quot;})
+record.add_link(Link(&quot;related&quot;, &quot;../related.json&quot;))
+record.add_asset(&quot;workflow&quot;, Asset(&quot;./workflow.cwl&quot;, roles=[&quot;data&quot;]))
+to_parquet(records_to_arrow([record]), &quot;workflow.parquet&quot;)
+</code></pre>
+<p>The asset href is stored as supplied; storage does not read or execute the
+CWL document.</p>
+<p>See <a href="../../explanation/preservation/">normalization and preservation</a> for
+timestamp and optional-field behavior.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../tutorials/first-round-trip/" class="btn btn-neutral float-left" title="Your first round trip"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../project-filter/" class="btn btn-neutral float-right" title="Project and filter records">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Terradue/ogc-records-parquet" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../tutorials/first-round-trip/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../project-filter/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
