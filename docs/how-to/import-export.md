@@ -3,6 +3,9 @@
 Use PySTAC for individual JSON documents. Install the package in your local
 checkout before running these examples from the repository root.
 
+For shell-based imports from local files or remote URLs, see the
+[command-line interface](../reference/cli.md).
+
 ## Import an example file
 
 ```python
