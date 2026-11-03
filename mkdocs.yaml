@@ -1,0 +1,66 @@
+# Copyright 2026 Terradue
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+site_name: OG API Records - Parquet
+site_description: Store and recover OGC Records with Arrow and GeoParquet.
+site_url: https://Terradue.github.io/ogc-records-parquet/
+repo_url: https://github.com/Terradue/ogc-records-parquet
+
+strict: true
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
+  - Tutorials:
+      - Your first round trip: tutorials/first-round-trip.md
+  - How-to guides:
+      - Import and export records: how-to/import-export.md
+      - Project and filter records: how-to/project-filter.md
+      - Store collection membership: how-to/collections.md
+      - Migrate existing applications and files: how-to/migrate.md
+      - Develop and build documentation: how-to/develop.md
+  - Reference:
+      - Python API: reference/api.md
+      - Storage format: reference/storage-format.md
+      - Errors and limitations: reference/limitations.md
+  - Explanation:
+      - Preservation and projections: explanation/preservation.md
+      - OGC Records and STAC: explanation/ogc-and-stac.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: google
+            show_source: true
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+
+validation:
+  nav:
+    omitted_files: warn
+  links:
+    not_found: warn
+    unrecognized_links: warn
+    anchors: warn

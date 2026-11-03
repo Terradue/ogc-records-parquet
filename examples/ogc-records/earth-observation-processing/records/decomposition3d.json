@@ -1,0 +1,66 @@
+{
+  "type": "Feature",
+  "id": "decomposition3d",
+  "geometry": null,
+  "properties": {
+    "created": "2026-06-19T13:44:55+00:00",
+    "updated": "2026-10-08T22:17:43.819072+00:00",
+    "title": "decomposition3d",
+    "description": "The kinesIS 3Decomp service supports the 3D geometric decomposition of ascending and descending surface motion measurements into actual vertical (up-down) and horizontal (east-west) motion components.",
+    "language": {
+      "code": "en-US",
+      "name": "English (United States)"
+    },
+    "resourceLanguages": [
+      {
+        "code": "en-US",
+        "name": "English (United States)"
+      }
+    ],
+    "license": "Apache-2.0",
+    "contacts": [
+      {
+        "identifier": "https://orcid.org/0009-0002-4192-3672",
+        "name": "Pacini, Fabrizio",
+        "organization": "Terradue",
+        "position": "Project Manager",
+        "emails": [
+          {
+            "value": "fabrizio.pacini@terradue.com"
+          }
+        ]
+      },
+      {
+        "identifier": "https://orcid.org/0000-0003-1705-8105",
+        "name": "Foumelis, Michael",
+        "organization": "Aristotle University of Thessaloniki",
+        "position": "Researcher",
+        "emails": [
+          {
+            "value": "mfoumelis@geo.auth.gr"
+          }
+        ]
+      },
+      {
+        "identifier": "https://orcid.org/0000-0002-0752-9930",
+        "name": "Arcorace, Mauro",
+        "organization": "Terradue",
+        "position": "Project Leader",
+        "emails": [
+          {
+            "value": "mauro.arcorace@terradue.com"
+          }
+        ]
+      }
+    ],
+    "keywords": [],
+    "themes": []
+  },
+  "links": [
+    {
+      "rel": "help",
+      "href": "https://docs.copernicuslac.terradue.com/services/geohazard/3decomp-service-specs/",
+      "title": "User Manual"
+    }
+  ]
+}

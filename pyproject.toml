@@ -1,0 +1,319 @@
+[build-system]
+requires = ["hatchling>=1.32.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ogc-records-parquet"
+dynamic = ["version"]
+description = "Preserve OGC Records JSON alongside queryable Arrow and GeoParquet columns"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+requires-python = ">=3.11"
+keywords = [
+  "OGC",
+  "Records",
+  "Arrow",
+  "GeoParquet",
+  "EOAP"
+]
+authors = [
+  { name = "Terradue srl", email = "info@terradue.com" },
+  { name = "Fabrice Brito", email = "fabrice.brito@terradue.com" },
+  { name = "Simone Tripodi", email = "simone.tripodi@terradue.com" }
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3.15",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "pyarrow>=16,!=19.0.0",
+  "shapely>=2.0,<3",
+  "pyproj>=3.6,<4",
+  "pystac-ext-ogc-record>=1.1,<2",
+]
+
+[project.optional-dependencies]
+notebook = [
+  "pygeofilter-duckdb==0.2.0",
+  "ipykernel>=6,<8"
+]
+
+# ---------------------------------------------------------------------------
+# Hatch: development and quality environment
+# ---------------------------------------------------------------------------
+
+dev = [
+  "pytest>=9.1.1,<10",
+  "pytest-cov>=7.1.0,<8",
+  "ruff>=0.16,<0.17",
+  "mypy>=2.3,<3",
+  "bandit>=1.9,<2",
+  "pyarrow-stubs>=20.0.0.20260819",
+  "types-shapely>=2.1.0.20260728"
+]
+test = [
+  "pytest>=8.4,<10",
+  "pytest-cov>=6.2,<8"
+]
+
+# ---------------------------------------------------------------------------
+# Project Refs
+# ---------------------------------------------------------------------------
+
+[project.urls]
+Homepage = "https://github.com/Terradue/ogc-records-parquet"
+Documentation = "https://Terradue.github.io/ogc-records-parquet/"
+Repository = "https://github.com/Terradue/ogc-records-parquet"
+Issues = "https://github.com/Terradue/ogc-records-parquet/issues"
+Changelog = "https://github.com/Terradue/ogc-records-parquet/blob/main/CHANGELOG.md"
+
+# ---------------------------------------------------------------------------
+# Versioning and packaging
+# ---------------------------------------------------------------------------
+
+[tool.hatch.version]
+path = "src/ogc_records_parquet/__about__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ogc_records_parquet"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src",
+  "/tests",
+  "/examples",
+  "/notebooks",
+  "/docs",
+  "/mkdocs.yaml",
+  "/README.md",
+  "/NOTICE",
+  "/pyproject.toml",
+  "/AGENTS.md"
+]
+
+# ---------------------------------------------------------------------------
+# Coverage
+# ---------------------------------------------------------------------------
+
+[tool.coverage.run]
+source_pkgs = ["ogc_records_parquet", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/ogc_records_parquet/__about__.py",
+]
+
+[tool.coverage.paths]
+ogc_records_parquet = [
+  "src/ogc_records_parquet",
+  "*/ogc_records_parquet/src/ogc_records_parquet"
+]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+  "raise NotImplementedError",
+]
+
+# ---------------------------------------------------------------------------
+# Hatch: test environment
+# ---------------------------------------------------------------------------
+
+[tool.hatch.envs.test]
+skip-install = false
+dependencies = [
+  "pytest>=9.1.1,<10",
+  "pytest-cov>=7.1.0,<8",
+]
+
+[tool.hatch.envs.test.scripts]
+test = "pytest {args:tests}"
+testv = "pytest --verbose {args:tests}"
+test-cov = "pytest --cov=ogc_records_parquet --cov-report=term-missing --cov-report=xml:coverage.xml {args:tests}"
+test-show-setup = "pytest --setup-show {args:tests}"
+
+[[tool.hatch.envs.test.matrix]]
+python = ["3.11", "3.12", "3.13", "3.14", "3.15"]
+
+# ---------------------------------------------------------------------------
+# Pytest
+# ---------------------------------------------------------------------------
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+addopts = [
+  "--strict-config",
+  "--strict-markers",
+]
+
+xfail_strict = true
+
+# ---------------------------------------------------------------------------
+# Ruff
+# ---------------------------------------------------------------------------
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+# Start with the essential rules
+select = [
+  # Core correctness
+  "F",      # Pyflakes
+  "E",      # pycodestyle errors
+  "W",      # pycodestyle warnings
+
+  # Imports and modernization
+  "I",      # isort
+  "UP",     # pyupgrade
+  "FA",     # future annotations
+  "TC",     # type-checking imports
+
+  # Bugs and correctness
+  "B",      # flake8-bugbear
+  "RET",    # flake8-return
+  "PTH",    # pathlib usage
+  "C4",     # comprehensions
+
+  # Simplification and readability
+  "SIM",    # flake8-simplify
+
+  # Complexity
+  "C90",    # McCabe complexity
+
+  # Pylint-derived checks
+  "PLE",    # Pylint errors
+  "PLW",    # Pylint warnings
+  "PLR",    # Pylint refactor/design checks
+
+  # Performance and Ruff-specific quality checks
+  "PERF",
+  "RUF",
+]
+
+ignore = [
+  # Formatter-controlled rules
+  "E501",   # line length
+  "W191",   # tab indentation
+  "E111",   # indentation
+  "E114",   # indentation
+  "E117",   # over-indented
+
+  # Too opinionated for a general project template.
+  # Enable per repository if useful.
+  # "PLR0904", # too many public methods
+]
+
+[tool.ruff.lint.mccabe]
+# Flag errors (C901) whenever complexity exceeds 10 (default is 10)
+max-complexity = 7
+
+[tool.ruff.lint.pylint]
+# Keep these deliberately stricter than Pylint defaults.
+max-args = 6
+max-branches = 10
+max-returns = 6
+max-statements = 40
+
+# ---------------------------------------------------------------------------
+# Mypy
+# ---------------------------------------------------------------------------
+
+[tool.mypy]
+python_version = "3.11"
+mypy_path = "typings"
+
+# Strict typing is the default for new Terradue Python projects.
+strict = true
+
+# Improve diagnostics.
+pretty = true
+show_error_codes = true
+show_error_context = true
+warn_unreachable = true
+
+# Avoid silently accepting untyped third-party APIs.
+ignore_missing_imports = false
+
+# Files checked by default.
+files = [
+  "src/ogc_records_parquet",
+  "tests",
+]
+
+[tool.hatch.envs.dev]
+python = "3.11"
+features = ["dev"]
+
+[tool.hatch.envs.docs]
+skip-install = true
+dependencies = [
+  "mkdocs>=1.6,<2",
+  "mkdocstrings[python]>=1.0.7,<2",
+]
+
+[tool.hatch.envs.docs.scripts]
+build = "mkdocs build --strict {args}"
+serve = "mkdocs serve {args}"
+
+[tool.hatch.envs.dev.scripts]
+# ---------------------------------------------------------------------------
+# Developer commands
+#
+# These commands are allowed to modify files.
+# ---------------------------------------------------------------------------
+
+format = "ruff format {args:src tests}"
+
+fix = [
+  "ruff check --fix {args:src tests}",
+  "ruff format {args:src tests}",
+]
+
+# ---------------------------------------------------------------------------
+# Verification commands
+#
+# These commands MUST NOT modify files and are suitable for CI.
+# ---------------------------------------------------------------------------
+
+format-check = "ruff format --check {args:src tests}"
+
+lint = "ruff check {args:src tests}"
+lint-check = "ruff check {args:src tests}"
+design-check = "ruff check --select C90,PLR {args:src tests}"
+
+typecheck = "mypy {args:src tests}"
+
+security = "bandit -r {args:src}"
+
+# Run the complete static quality gate.
+quality = [
+  "ruff format --check {args:src tests}",
+  "ruff check {args:src tests}",
+  "mypy {args:src tests}",
+  "bandit -r {args:src}",
+]
+
+# Complete local/CI validation including tests.
+check = [
+  "ruff format --check {args:src tests}",
+  "ruff check {args:src tests}",
+  "mypy {args:src tests}",
+  "bandit -r {args:src}",
+  "pytest {args:tests}",
+]

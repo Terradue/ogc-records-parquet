@@ -1,0 +1,66 @@
+{
+  "type": "Feature",
+  "id": "fall3d-what-if-volcanos",
+  "geometry": null,
+  "properties": {
+    "created": "2025-01-20T00:00:00+00:00",
+    "updated": "2026-10-08T22:20:42.344020+00:00",
+    "title": "FALL3D Volcanic plume dispersion modelling",
+    "description": "Workflow of the FALL3D modelling service for volcanic ash dispersion, supporting user-defined what-if scenarios. The scenario type controls the initial eruptive column height, while initial conditions define the initial concentration fields for the simulation, ranging from zero initial concentration (NONE) to using a previous model run (RESTART). Example applications include the 2018 Etna and 2021 La Palma eruptions",
+    "language": {
+      "code": "en-US",
+      "name": "English (United States)"
+    },
+    "resourceLanguages": [
+      {
+        "code": "en-US",
+        "name": "English (United States)"
+      }
+    ],
+    "license": "CC-BY-4.0",
+    "contacts": [
+      {
+        "identifier": "https://orcid.org/0009-0000-1342-9736",
+        "name": "Brito, Fabrice",
+        "organization": "Terradue",
+        "position": "Project Manager",
+        "emails": [
+          {
+            "value": "fabrice.brito@terradue.com"
+          }
+        ]
+      },
+      {
+        "identifier": "https://orcid.org/0000-0002-0677-6366",
+        "name": "Folch, Arnau",
+        "organization": "Geociencias Barcelona",
+        "position": "Researcher",
+        "emails": [
+          {
+            "value": "afolch@geo3bcn.csic.es"
+          }
+        ]
+      },
+      {
+        "identifier": "https://orcid.org/0000-0002-0677-6366",
+        "name": "Folch, Arnau",
+        "organization": "Geociencias Barcelona",
+        "position": "Project Leader",
+        "emails": [
+          {
+            "value": "afolch@geo3bcn.csic.es"
+          }
+        ]
+      }
+    ],
+    "keywords": [],
+    "themes": []
+  },
+  "links": [
+    {
+      "rel": "help",
+      "href": "https://eoap.github.io/app-fall3d/",
+      "title": "User Manual"
+    }
+  ]
+}

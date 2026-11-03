@@ -1,0 +1,66 @@
+{
+  "type": "Feature",
+  "id": "esvm",
+  "geometry": null,
+  "properties": {
+    "created": "2026-06-16T00:00:00+00:00",
+    "updated": "2026-10-08T22:19:32.213878+00:00",
+    "title": "Ecosystem Services Value Mapping",
+    "description": "The CopLAC Ecosystem Services Value Mapping Service applies InVEST models and EO data to map the economic value",
+    "language": {
+      "code": "en-US",
+      "name": "English (United States)"
+    },
+    "resourceLanguages": [
+      {
+        "code": "en-US",
+        "name": "English (United States)"
+      }
+    ],
+    "license": "Apache-2.0",
+    "contacts": [
+      {
+        "identifier": "https://orcid.org/0009-0000-1342-9736",
+        "name": "Brito, Fabrice",
+        "organization": "Terradue",
+        "position": "Project Manager",
+        "emails": [
+          {
+            "value": "fabrice.brito@terradue.com"
+          }
+        ]
+      },
+      {
+        "identifier": "https://orcid.org/0000-0002-0752-9930",
+        "name": "Arcorace, Mauro",
+        "organization": "Terradue",
+        "position": "Researcher",
+        "emails": [
+          {
+            "value": "mauro.arcorace@terradue.com"
+          }
+        ]
+      },
+      {
+        "identifier": "https://orcid.org/0009-0008-1861-965X",
+        "name": "Longobardo, Michele",
+        "organization": "Terradue",
+        "position": "Project Leader",
+        "emails": [
+          {
+            "value": "michele.longobardo@terradue.com"
+          }
+        ]
+      }
+    ],
+    "keywords": [],
+    "themes": []
+  },
+  "links": [
+    {
+      "rel": "help",
+      "href": "https://docs.copernicuslac.terradue.com/",
+      "title": "User Manual"
+    }
+  ]
+}

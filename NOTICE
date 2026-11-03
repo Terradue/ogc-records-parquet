@@ -1,0 +1,58 @@
+ogc-records-parquet
+Copyright 2026 Terradue
+
+This project is licensed under the Apache License, Version 2.0.
+See LICENSE for the project license.
+
+Third-party acknowledgment: stac-geoparquet
+-----------------------------------------
+
+This project acknowledges stac-geoparquet, by Tom Augspurger and its
+contributors, as a design and implementation reference for storing
+JSON records in Arrow and GeoParquet.
+
+Project: https://github.com/stac-utils/stac-geoparquet
+Reference inspected: release 0.8.3
+
+The overlapping implementation patterns include:
+- GeoParquet WKB metadata and bbox covering declarations.
+- GeoArrow geometry field metadata.
+- Batched Arrow conversion and Parquet writing.
+- Collection descriptions stored in file metadata.
+
+Related local implementations are in:
+- src/ogc_records_parquet/_schema.py
+- src/ogc_records_parquet/_conversion.py
+- src/ogc_records_parquet/parquet.py
+
+The upstream reference implementations are:
+- https://github.com/stac-utils/stac-geoparquet/blob/0.8.3/stac_geoparquet/arrow/_to_parquet.py
+- https://github.com/stac-utils/stac-geoparquet/blob/0.8.3/stac_geoparquet/arrow/_to_arrow.py
+- https://github.com/stac-utils/stac-geoparquet/blob/0.8.3/stac_geoparquet/arrow/_batch.py
+- https://github.com/stac-utils/stac-geoparquet/blob/0.8.3/stac_geoparquet/arrow/_util.py
+
+This acknowledgment is informational and does not modify the project
+license. The upstream copyright and MIT license notice are reproduced
+below; they continue to apply to any incorporated upstream material.
+
+The MIT License (MIT)
+
+Copyright (c) 2022 Tom Augspurger
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

@@ -1,0 +1,66 @@
+{
+  "type": "Feature",
+  "id": "evm",
+  "geometry": null,
+  "properties": {
+    "created": "2025-10-01T00:00:00+00:00",
+    "updated": "2026-10-08T22:20:11.071256+00:00",
+    "title": "evm",
+    "description": "The CopLAC economic Value Mapping Service is a geospatial tool developed under the CopernicusLAC program to quantify the economic value of exposed assets across Latin America and the Caribbean. It combines Earth Observation data with economic and statistical information to generate per-pixel value maps that support disaster risk reduction, resilience building, and sustainable planning.",
+    "language": {
+      "code": "en-US",
+      "name": "English (United States)"
+    },
+    "resourceLanguages": [
+      {
+        "code": "en-US",
+        "name": "English (United States)"
+      }
+    ],
+    "license": "Apache-2.0",
+    "contacts": [
+      {
+        "identifier": "https://orcid.org/0009-0002-4192-3672",
+        "name": "Pacini, Fabrizio",
+        "organization": "Terradue",
+        "position": "Project Manager",
+        "emails": [
+          {
+            "value": "fabrizio.pacini@terradue.com"
+          }
+        ]
+      },
+      {
+        "identifier": "https://orcid.org/0000-0003-0255-3090",
+        "name": "Ramo Sanchez, Ruben",
+        "organization": "Indra",
+        "position": "Researcher",
+        "emails": [
+          {
+            "value": "rramo@indra.es"
+          }
+        ]
+      },
+      {
+        "identifier": "https://orcid.org/0000-0002-0752-9930",
+        "name": "Arcorace, Mauro",
+        "organization": "Terradue",
+        "position": "Project Leader",
+        "emails": [
+          {
+            "value": "mauro.arcorace@terradue.com"
+          }
+        ]
+      }
+    ],
+    "keywords": [],
+    "themes": []
+  },
+  "links": [
+    {
+      "rel": "help",
+      "href": "https://docs.copernicuslac.terradue.com/services/geohazard/kinesis-service-specs",
+      "title": "User Manual"
+    }
+  ]
+}

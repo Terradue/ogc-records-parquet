@@ -1,0 +1,72 @@
+{
+  "type": "Feature",
+  "id": "combi",
+  "geometry": null,
+  "properties": {
+    "created": "2026-06-25T07:37:17+00:00",
+    "updated": "2026-10-08T22:17:11.081069+00:00",
+    "title": "COMBI",
+    "description": "This service takes 3 single band assets (e.g. bands that may come from different sensors) to generate a full resolution RGB composite.",
+    "language": {
+      "code": "en-US",
+      "name": "English (United States)"
+    },
+    "resourceLanguages": [
+      {
+        "code": "en-US",
+        "name": "English (United States)"
+      }
+    ],
+    "license": "Apache-2.0",
+    "contacts": [
+      {
+        "identifier": "https://orcid.org/0009-0000-1342-9736",
+        "name": "Brito, Fabrice",
+        "organization": "Terradue",
+        "position": "Project Manager",
+        "emails": [
+          {
+            "value": "fabrice.brito@terradue.com"
+          }
+        ]
+      },
+      {
+        "identifier": "https://orcid.org/0000-0002-0752-9930",
+        "name": "Arcorace, Mauro",
+        "organization": "Terradue",
+        "position": "Researcher",
+        "emails": [
+          {
+            "value": "mauro.arcorace@terradue.com"
+          }
+        ]
+      },
+      {
+        "identifier": "https://orcid.org/0009-0008-1861-965X",
+        "name": "Longobardo, Michele",
+        "organization": "Terradue",
+        "position": "Project Leader",
+        "emails": [
+          {
+            "value": "michele.longobardo@terradue.com"
+          }
+        ]
+      }
+    ],
+    "keywords": [
+      "CWL",
+      "CWL Workflow",
+      "Workflow",
+      "Earth Observation",
+      "Earth Observation application package"
+    ],
+    "themes": []
+  },
+  "links": [
+    {
+      "rel": "help",
+      "href": "https://gitlab.com/charter-processing-environment/steps/scombi-do-2",
+      "title": "User Manual"
+    }
+  ]
+}

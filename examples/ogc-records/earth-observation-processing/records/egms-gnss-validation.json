@@ -1,0 +1,44 @@
+{
+  "type": "Feature",
+  "id": "egms-gnss-validation",
+  "geometry": null,
+  "properties": {
+    "created": "2026-08-13T00:00:00+00:00",
+    "updated": "2026-10-08T22:18:55.255530+00:00",
+    "title": "EGMS validation pipelines",
+    "description": "EO Application Packages for EGMS GNSS, A-EPND, and corner-reflector validation.",
+    "language": {
+      "code": "en-US",
+      "name": "English (United States)"
+    },
+    "resourceLanguages": [
+      {
+        "code": "en-US",
+        "name": "English (United States)"
+      }
+    ],
+    "license": "https://spdx.org/licenses/Apache-2.0.html",
+    "contacts": [
+      {
+        "identifier": "None",
+        "name": "Validation Team, EGMS",
+        "organization": "NHAZCA S.r.l.",
+        "position": "N/A",
+        "emails": [
+          {
+            "value": "info@nhazca.it"
+          }
+        ]
+      }
+    ],
+    "keywords": [],
+    "themes": []
+  },
+  "links": [
+    {
+      "rel": "help",
+      "href": "https://github.com/NHAZCA/egms_validation",
+      "title": "Repository README"
+    }
+  ]
+}

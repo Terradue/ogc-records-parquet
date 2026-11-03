@@ -1,0 +1,66 @@
+{
+  "type": "Feature",
+  "id": "diachronic-flood-detection",
+  "geometry": null,
+  "properties": {
+    "created": "2026-03-10T00:00:00+00:00",
+    "updated": "2026-10-08T22:17:58.937518+00:00",
+    "title": "Diachronic Flood Detection",
+    "description": "The Diachronic Flood Detection service provides an estimation of the cumulative extent of flood traces using Sentinel-1 imagery",
+    "language": {
+      "code": "en-US",
+      "name": "English (United States)"
+    },
+    "resourceLanguages": [
+      {
+        "code": "en-US",
+        "name": "English (United States)"
+      }
+    ],
+    "license": "CC-BY-4.0",
+    "contacts": [
+      {
+        "identifier": "https://orcid.org/0009-0002-4192-3672",
+        "name": "Pacini, Fabrizio",
+        "organization": "Terradue",
+        "position": "Project Manager",
+        "emails": [
+          {
+            "value": "fabrizio.pacini@terradue.com"
+          }
+        ]
+      },
+      {
+        "identifier": "None",
+        "name": "Vicioso Matrat, Adrian",
+        "organization": "Indra",
+        "position": "Researcher",
+        "emails": [
+          {
+            "value": "avicioso@indra.es"
+          }
+        ]
+      },
+      {
+        "identifier": "https://orcid.org/0000-0002-0752-9930",
+        "name": "Arcorace, Mauro",
+        "organization": "Terradue",
+        "position": "Project Leader",
+        "emails": [
+          {
+            "value": "mauro.arcorace@terradue.com"
+          }
+        ]
+      }
+    ],
+    "keywords": [],
+    "themes": []
+  },
+  "links": [
+    {
+      "rel": "help",
+      "href": "https://eoap.github.io/app-gpuflow/",
+      "title": "User Manual"
+    }
+  ]
+}
