@@ -14,7 +14,7 @@
 
 """Define the package version independently of optional dependencies."""
 
-__version__ = "0.3.0-beta"
+__version__ = "0.1.0"
 """Package version recorded as `writer_version` when a storage schema is created.
 
 This version is independent of the OGC Records storage format and GeoParquet

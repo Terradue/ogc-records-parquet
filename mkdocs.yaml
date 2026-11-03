@@ -36,6 +36,7 @@ nav:
       - Develop and build documentation: how-to/develop.md
   - Reference:
       - Python API: reference/api.md
+      - Command-line interface: reference/cli.md
       - Storage format: reference/storage-format.md
       - Errors and limitations: reference/limitations.md
   - Explanation:
