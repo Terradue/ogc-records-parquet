@@ -48,7 +48,7 @@ notebook = [
 ]
 cli = [
   "click>=8.5.0",
-  "loguru==0.7.3",
+  "loguru==0.8.0",
   "session-adapters==0.7.0"
 ]
 
